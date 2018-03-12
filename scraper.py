@@ -105,6 +105,8 @@ for link in links:
         if 'spending' in csvfile:
             csvMth = link.text.strip().split(' ')[0].strip()[:3]
             csvYr = link.text.strip().split(' ')[1].strip()[:4]
+            if '2107' in csvYr:
+                csvYr = '2017'
             csvMth = convert_mth_strings(csvMth.upper())
             data.append([csvYr, csvMth, url])
 
@@ -130,4 +132,3 @@ if errors > 0:
 
 
 #### EOF
-
